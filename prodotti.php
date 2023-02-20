@@ -9,15 +9,16 @@ class Prodotti
     public $prezzo;
     public $descrizione;
     public $marca;
-    public $categorie;
+    public $categoria;
 
 
-    public function __construct($nome, $prezzo, $descrizione, $marca, $categorie)
+
+    public function __construct($nome, $prezzo, $descrizione, $marca, $categoria)
     {
         $this->nome = $nome;
         $this->prezzo = $prezzo;
         $this->descrizione = $descrizione;
         $this->marca = $marca;
-        $this->categorie = $categorie;
+        $this->categoria = $categoria;
     }
 }
