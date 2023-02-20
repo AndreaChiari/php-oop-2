@@ -8,21 +8,14 @@ class Prodotti
     public $prezzo;
     public $descrizione;
     public $marca;
-    public $categoria;
 
 
-    public function __construct($nome, $prezzo, $descrizione, $marca, $categoria)
+
+    public function __construct($nome, $prezzo, $descrizione, $marca)
     {
         $this->nome = $nome;
         $this->prezzo = $prezzo;
         $this->descrizione = $descrizione;
         $this->marca = $marca;
-        $this->categoria = $categoria;
-    }
-
-    public function getString()
-    {
-        $nome_categoria = implode(',', $categoria);
-        return $nome_categoria;
     }
 }
