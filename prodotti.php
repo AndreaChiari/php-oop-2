@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/categorie.php';
 
-
 class Prodotti
 {
     public $nome;
@@ -12,7 +11,6 @@ class Prodotti
     public $categoria;
 
 
-
     public function __construct($nome, $prezzo, $descrizione, $marca, $categoria)
     {
         $this->nome = $nome;
@@ -20,5 +18,11 @@ class Prodotti
         $this->descrizione = $descrizione;
         $this->marca = $marca;
         $this->categoria = $categoria;
+    }
+
+    public function getString()
+    {
+        $nome_categoria = implode(',', $categoria);
+        return $nome_categoria;
     }
 }

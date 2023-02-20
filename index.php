@@ -3,12 +3,12 @@ require __DIR__ . '/prodotti.php';
 require __DIR__ . '/cucce.php';
 require __DIR__ . '/cibo.php';
 require __DIR__ . '/giochi.php';
-require __DIR__ . '/categorie.php';
 
 
-// cucce
-$cuccia_domus = new Cuccia('Cuccia domus', 'https://arcaplanet.vtexassets.com/arquivos/ids/227348/canile-domus-extra-large.jpg?v=1763169243', 239, "lorem ipsium", 'XL', "nicedog", [$cani, $gatti]);
-$cuccia_lodge = new Cuccia('Cuccia lodge', 'https://arcaplanet.vtexassets.com/arquivos/ids/225623/p-a-y--canile-eco-lodge-large.jpg?v=1763301184', 79, "lorem ipsium", 'XL', "nicedog", [$cani, $gatti]);
+
+// cucce cani
+$cuccia_domus = new Gioco('Cuccia domus', 'https://arcaplanet.vtexassets.com/arquivos/ids/227348/canile-domus-extra-large.jpg?v=1763169243', 239, "lorem ipsium", 'XL', "nicedog", [$cani, $gatti]);
+$cuccia_lodge = new Gioco('Cuccia lodge', 'https://arcaplanet.vtexassets.com/arquivos/ids/225623/p-a-y--canile-eco-lodge-large.jpg?v=1763301184', 79, "lorem ipsium", 'XL', "nicedog", [$cani, $gatti]);
 
 $cucce_cani = [$cuccia_domus, $cuccia_lodge];
 
@@ -43,9 +43,10 @@ $cucce_cani = [$cuccia_domus, $cuccia_lodge];
             <h3 class="mb-4">CUCCE</h3>
             <?php foreach ($cucce_cani as $cuccia) : ?>
                 <div class="card col-4" style="width: 18rem;">
-                    <img src="<?= $cuccia->$img ?>" class="card-img-top" alt="<?= $cuccia->$nome ?>">
+                    <img src="<?= $cuccia->img ?>" class="card-img-top" alt="<?= $cuccia->nome ?>">
                     <div class="card-body">
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p><?= var_dump($cuccia->categoria) ?></p>
                     </div>
                 <?php endforeach; ?>
                 </div>

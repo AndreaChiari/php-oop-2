@@ -9,3 +9,6 @@ class Categoria
         $this->nome_animale = $nome_animale;
     }
 }
+
+$cani = new Categoria('cani');
+$gatti = new Categoria('gatti');
