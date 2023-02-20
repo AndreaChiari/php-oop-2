@@ -7,8 +7,8 @@ require __DIR__ . '/giochi.php';
 
 
 // cucce cani
-$cuccia_domus = new Cuccia('Cuccia domus', 'https://www.gardenbedettishop.com/16593-large_default/cuccia-per-cani-queen-50-ferplast.jpg', 239, "lorem ipsium", 'XL', "nicedog");
-$cuccia_lodge = new Cuccia('Cuccia lodge', 'https://www.gardenbedettishop.com/16593-large_default/cuccia-per-cani-queen-50-ferplast.jpg', 79, "lorem ipsium", 'XL', "nicedog");
+$cuccia_domus = new Cuccia('Cuccia domus', 'https://www.komar.de/it/media/catalog/product/cache/8/image/9df78eab33525d08d6e5fb8d27136e95/v/d/vd-046-star-wars-official-poster-ep7.jpg', 239, "lorem ipsium", 'XL', "nicedog");
+$cuccia_lodge = new Cuccia('Cuccia lodge', 'https://www.komar.de/it/media/catalog/product/cache/8/image/9df78eab33525d08d6e5fb8d27136e95/v/d/vd-046-star-wars-official-poster-ep7.jpg', 79, "lorem ipsium", 'XL', "nicedog");
 
 $cucce_cani = [$cuccia_domus, $cuccia_lodge];
 
