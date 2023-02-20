@@ -22,7 +22,7 @@ $giochi_animali = [$osso, $pallina];
 $croccantini = new Cibo('croccantini Elite', 'https://cdn.easycoop.com/media/catalog/product/cache/6a235447ffaf2a4eb09bae5f60fe7f21/c/r/croccantini_misti_con_manzo__pollo__carote_e_riso__2_kg_20220608_6372305_1.jpg', '4,23 euro', 'lorem ipsium', 'amici speciali', '07/03/2025', 'croccantini');
 $biscotti = new Cibo('biscotti super', 'https://m.media-amazon.com/images/I/71t8BQ0s7YL._AC_SY550_PIbundle-2,TopRight,0,0_SH20_.jpg', '8,78 euro', 'lorem ipsium', 'biscrok', '05/08/2025', 'biscotti');
 
-$cibi = [$croccantini, $pallina]
+$cibi = [$croccantini, $biscotti];
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ $cibi = [$croccantini, $pallina]
     </header>
     <main>
         <h1>CUCCE</h1>
-        <div class="row dog-section">
+        <div class="row">
             <?php foreach ($cucce_cani as $cuccia) : ?>
                 <div class="col-2">
                     <div class="card mb-5">
