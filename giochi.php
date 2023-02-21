@@ -8,9 +8,9 @@ class Gioco extends Prodotti
     public $consistenza;
 
 
-    public function __construct($nome, $img, $prezzo, $descrizione, $marca, $consistenza)
+    public function __construct($nome, $img, $prezzo, $descrizione, $marca, $consistenza, Categoria $categoria)
     {
-        parent::__construct($nome, $img, $prezzo, $descrizione, $marca);
+        parent::__construct($nome, $img, $prezzo, $descrizione, $marca, $categoria);
         $this->consistenza = $consistenza;
     }
 }

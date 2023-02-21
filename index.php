@@ -3,24 +3,26 @@ require __DIR__ . '/prodotti.php';
 require __DIR__ . '/cucce.php';
 require __DIR__ . '/cibo.php';
 require __DIR__ . '/giochi.php';
+require_once __DIR__ . '/categorie.php';
 
-
+$cane = new Categoria('cane');
+$gatto = new Categoria('gatto');
 
 // cucce 
-$cuccia_domus = new Cuccia('Cuccia domus', 'https://arcaplanet.vtexassets.com/arquivos/ids/227348/canile-domus-extra-large.jpg?v=1763169243', 239, "lorem ipsium", "nicedog", 'XL');
-$cuccia_lodge = new Cuccia('Cuccia lodge', 'https://arcaplanet.vtexassets.com/arquivos/ids/225623/p-a-y--canile-eco-lodge-large.jpg?v=1763301184', 79, "lorem ipsium", "nicedog", 'XL');
+$cuccia_domus = new Cuccia('Cuccia domus', 'https://arcaplanet.vtexassets.com/arquivos/ids/227348/canile-domus-extra-large.jpg?v=1763169243', 239, "lorem ipsium", "nicedog", 'XL', $cane);
+$cuccia_lodge = new Cuccia('Cuccia lodge', 'https://arcaplanet.vtexassets.com/arquivos/ids/225623/p-a-y--canile-eco-lodge-large.jpg?v=1763301184', 79, "lorem ipsium", "nicedog", 'XL', $cane);
 
 $cucce_cani = [$cuccia_domus, $cuccia_lodge];
 
 //giochi
-$osso = new Gioco('osso di plastica', 'https://m.media-amazon.com/images/I/61rRP0sjhRL.jpg', '10 euro', "lorem ipsium", "nicedog", 'consistenza dura');
-$pallina = new Gioco('pallina di gomma', 'https://cdn.manomano.com/images/images_products/25102394/P/56517915_1.jpg', '5 euro', "lorem ipsium", "nicedog", 'consistenza elastica');
+$osso = new Gioco('osso di plastica', 'https://m.media-amazon.com/images/I/61rRP0sjhRL.jpg', '10 euro', "lorem ipsium", "nicedog", 'consistenza dura', $cane);
+$pallina = new Gioco('pallina di gomma', 'https://cdn.manomano.com/images/images_products/25102394/P/56517915_1.jpg', '5 euro', "lorem ipsium", "nicedog", 'consistenza elastica', $cane);
 
 $giochi_animali = [$osso, $pallina];
 
 //cibo
-$croccantini = new Cibo('croccantini Elite', 'https://cdn.easycoop.com/media/catalog/product/cache/6a235447ffaf2a4eb09bae5f60fe7f21/c/r/croccantini_misti_con_manzo__pollo__carote_e_riso__2_kg_20220608_6372305_1.jpg', '4,23 euro', 'lorem ipsium', 'amici speciali', '07/03/2025', 'croccantini');
-$biscotti = new Cibo('biscotti super', 'https://m.media-amazon.com/images/I/71t8BQ0s7YL._AC_SY550_PIbundle-2,TopRight,0,0_SH20_.jpg', '8,78 euro', 'lorem ipsium', 'biscrok', '05/08/2025', 'biscotti');
+$croccantini = new Cibo('croccantini Elite', 'https://cdn.easycoop.com/media/catalog/product/cache/6a235447ffaf2a4eb09bae5f60fe7f21/c/r/croccantini_misti_con_manzo__pollo__carote_e_riso__2_kg_20220608_6372305_1.jpg', '4,23 euro', 'lorem ipsium', 'amici speciali', '07/03/2025', 'croccantini', $gatto);
+$biscotti = new Cibo('biscotti super', 'https://m.media-amazon.com/images/I/71t8BQ0s7YL._AC_SY550_PIbundle-2,TopRight,0,0_SH20_.jpg', '8,78 euro', 'lorem ipsium', 'biscrok', '05/08/2025', 'biscotti', $gatto);
 
 $cibi = [$croccantini, $biscotti];
 ?>
@@ -61,6 +63,7 @@ $cibi = [$croccantini, $biscotti];
                             <p><?= $cuccia->descrizione ?></p>
                             <p><?= $cuccia->marca ?></p>
                             <p><?= $cuccia->grandezza ?></p>
+                            <p>categoria: <?= $cuccia->categoria->nome_animale ?></p>
                         </div>
                     </div>
                 </div>
@@ -78,6 +81,7 @@ $cibi = [$croccantini, $biscotti];
                             <p><?= $gioco->descrizione ?></p>
                             <p><?= $gioco->marca ?></p>
                             <p><?= $gioco->consistenza ?></p>
+                            <p>categoria: <?= $gioco->categoria->nome_animale ?></p>
                         </div>
                     </div>
                 </div>
@@ -96,6 +100,7 @@ $cibi = [$croccantini, $biscotti];
                             <p><?= $cibo->marca ?></p>
                             <p><?= $cibo->scadenza ?></p>
                             <p><?= $cibo->tipo ?></p>
+                            <p>categoria: <?= $cibo->categoria->nome_animale ?></p>
                         </div>
                     </div>
                 </div>
